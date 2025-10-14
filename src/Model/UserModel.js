@@ -1,10 +1,9 @@
+require('dotenv').config();
 const { prisma } = require('../prisma');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
-require('dotenv').config();
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
-
+console.log(JWT_SECRET_KEY);
 // 🔹 Buscar todos os usuários
 exports.getAllUsers = async () => {
   return prisma.user.findMany({
